@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exemplo Formulário</title>
+    <style>
+        label, input{
+            display: block;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Exemplo Formulário</h1>
+    <form action="./nada.php" method="post">
+        <label for="">Nome:</label>
+        <input type="text" id="Nome" name="Nome">
+        <label for="">Email</label>
+        <input type="email" id="Email" name="Email">
+        <label for="">Senha</label>
+        <input type="password" id="Senha" name="Senha">
+        <input type="submit" value="Enviar">
+    </form>
+  </body>
+</html>
