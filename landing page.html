@@ -38,7 +38,7 @@
         #principal p{
             margin: auto;
             padding-top: 20px;
-            width: 400px;
+            max-width: 400px;
         }
 
         #principal button{
@@ -49,6 +49,7 @@
         #lista{
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         #lista .caixa{
@@ -80,10 +81,22 @@
             text-align: end;
         }
 
+        body{
+            max-width: 1000px;
+            margin: auto;
+        }
 
+        #conteiner{
+            display: flex;
+            height: 100vh;
+        }
     </style>
 </head>
 <body>
+    
+
+    <div id="conteiner">
+    <div id="grupo01">
     <header>
         <h1>Minha Marca</h1>
         <nav>
@@ -121,5 +134,7 @@
     <footer>
         &copy; 2025 MinhaMarca - Todos os direitos reservados.
     </footer>
+    </div> 
+    </div>
 </body>
 </html>
