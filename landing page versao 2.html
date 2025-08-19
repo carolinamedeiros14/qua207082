@@ -25,7 +25,7 @@
         nav a {
             background-color: black;
             color: white;
-            padding: 5px 10px;
+            padding: 10px 15px;
             margin: 0px 2px;
         }
 
@@ -73,6 +73,28 @@
             background-color: gray;
             margin: 10px;
         }
+
+        #noticias {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px;
+        }
+
+        .noticia {
+            width: 300px;
+            margin: 30px;
+        }
+
+        .noticia div{
+            border: 2px solid black;
+            border-radius: 100%;
+            float: left;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -86,16 +108,21 @@
             <a href="#">C</a>
         </nav>
     </header>
+
     <section id="principal">
-        <h2>What is Lorem Ipsum?</h2>
-        <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-            software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <button>CTA Button</button>
+        <div>
+            <h2>What is Lorem Ipsum?</h2>
+            <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                of
+                type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                the
+                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <button>CTA Button</button>
         </div>
         <div>
             <iframe src="https://www.youtube.com/embed/tNobiwuAaAg?si=D2lZ3aujXWXLVHR8" title="YouTube video player"
@@ -104,12 +131,49 @@
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
+
     <section id="carrossel">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
     </section>
+
+    <section id="noticias">
+        <div class="noticia">
+            <div>1</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="noticia">
+            <div>2</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="noticia">
+            <div>3</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="noticia">
+            <div>4</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="noticia">
+            <div>5</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="noticia">
+            <div>6</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+    </section>
+
+
+
 </body>
 
 </html>
