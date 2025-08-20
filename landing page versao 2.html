@@ -67,21 +67,39 @@
             justify-content: center;
         }
 
-        #carrossel div {
+        #container {
+            width: 880px;
+            overflow: hidden;
+        }
+
+        #carrossel-container {
+            width: 100%;
+            display: flex;
+        }
+
+        #carrossel-container div {
             height: 130px;
-            width: 200px;
-            background-color: gray;
+            min-width: 200px;
+            background-color: grey;
             margin: 10px;
         }
 
         #noticias {
             display: flex;
             flex-wrap: wrap;
-            margin: 30px;
+            justify-content: space-between;
+        }
+
+        #bt-left,
+        #bt-right {
+            font-size: 300%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
         }
 
         .noticia {
-            width: 250px;
+            width: 270px;
             margin: 30px;
         }
 
@@ -97,8 +115,12 @@
             margin: 10px;
         }
 
-        .noticia h3{
+        .noticia h3 {
             font-size: xx-large;
+        }
+
+        .noticia p {
+            margin-top: 5px;
         }
 
         #depoimentos {
@@ -124,10 +146,9 @@
             color: white;
         }
 
-        body{
+        body {
             width: 1000px;
             margin: auto;
-            justify-content: center;
             border: 2px solid grey;
             background-color: white;
         }
@@ -135,13 +156,14 @@
         html {
             background-color: #dedede;
         }
-        
-        hr{
+
+        hr {
             border: 1px solid rgb(204, 204, 204);
             width: 80%;
             margin: auto;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -149,7 +171,7 @@
     <header>
         <h1>LOGO</h1>
         <nav>
-            <a href="#">A</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#">B</a>
             <a href="#">C</a>
         </nav>
@@ -181,10 +203,18 @@
     <hr>
 
     <section id="carrossel">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div id="bt-left"><i class="fa-solid fa-angle-left"></i></div>
+        <div id="container">
+            <div id="carrossel-container">
+                <div class="img">1</div>
+                <div class="img">2</div>
+                <div class="img">3</div>
+                <div class="img">4</div>
+                <div class="img">5</div>
+                <div class="img">6</div>
+            </div>
+        </div>
+        <div id="bt-right"><i class="fa-solid fa-angle-right"></i></div>
     </section>
 
     <hr>
@@ -224,7 +254,6 @@
 
     <hr>
 
-
     <section id="depoimentos">
         <div class="depoimento">
             <div class="foto"></div>
@@ -234,11 +263,21 @@
             <div class="foto"></div>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
-
     </section>
+
     <footer>
         Duvido você conseguir ler isso aqui
     </footer>
+
+    <script>
+        const imgs = document.getElementById("carrossel-container");
+        const img = document.querySelectorAll("#carrossel-container div")
+        let idx = 0;
+        function carrossel(i) {
+            idx += i;
+            if(idx<0) idx = 0;
+        }
+    </script>
 
 </body>
 
