@@ -75,6 +75,7 @@
         #carrossel-container {
             width: 100%;
             display: flex;
+            transition: transform 0.5s ease-in-out;
         }
 
         #carrossel-container div {
@@ -172,8 +173,8 @@
         <h1>LOGO</h1>
         <nav>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#">B</a>
-            <a href="#">C</a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
         </nav>
     </header>
 
@@ -203,7 +204,9 @@
     <hr>
 
     <section id="carrossel">
-        <div id="bt-left"><i class="fa-solid fa-angle-left"></i></div>
+        <div id="bt-left" onclick="carrossel(-1)">
+            <i class="fa-solid fa-angle-left"></i>
+        </div>
         <div id="container">
             <div id="carrossel-container">
                 <div class="img">1</div>
@@ -214,7 +217,9 @@
                 <div class="img">6</div>
             </div>
         </div>
-        <div id="bt-right"><i class="fa-solid fa-angle-right"></i></div>
+        <div id="bt-right" onclick="carrossel(1)">
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
     </section>
 
     <hr>
@@ -271,11 +276,13 @@
 
     <script>
         const imgs = document.getElementById("carrossel-container");
-        const img = document.querySelectorAll("#carrossel-container div")
+        const img = document.querySelectorAll("#carrossel-container div");
         let idx = 0;
         function carrossel(i) {
             idx += i;
-            if(idx<0) idx = 0;
+            if (idx < 0) idx = 0;
+            if (idx >= img.length - 4) idx = img.length - 4;
+            imgs.style.transform = `translateX(${-idx * 220}px)`;
         }
     </script>
 
