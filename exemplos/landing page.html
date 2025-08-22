@@ -18,6 +18,7 @@
             justify-content: space-between;
             border: 1px solid black;
             align-items: center;
+            padding: 5px;
         }
 
         nav a {
@@ -29,15 +30,16 @@
 
         #principal {
             background-color: grey;
-            text-align: center;
+            text-align: left;
         }
 
         #principal h2 {
             padding-top: 45px;
+            padding-left: 10px
         }
 
         #principal p {
-            margin: auto;
+            margin-left: 10px;
             padding-top: 20px;
             max-width: 400px;
         }
@@ -45,11 +47,19 @@
         #principal button {
             padding: 10px 15px;
             margin: 40px auto;
+            margin-left: 10px;
+        }
+
+        .curiosidade h3,
+        .curiosidade p {
+            padding: 7px;
         }
 
         #carrossel {
             display: flex;
             justify-content: center;
+            padding: 20px 0px;
+            align-items: center;
         }
 
         #container {
@@ -64,16 +74,13 @@
             transition: transform 0.5s ease-in-out;
         }
 
-        #carrossel-container div {
+        #carrossel-container div.curiosidade {
             height: 300px;
             min-width: 200px;
             background-color: grey;
             margin: 10px;
-            padding: 15px;
-        }
-
-        #carrossel-container h3 {
-            margin-bottom: 10px;
+            padding: 10px;
+            text-align: center;
         }
 
         #bt-left,
@@ -82,6 +89,7 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            padding: 10px;
         }
 
         #depoimentos {
@@ -111,6 +119,12 @@
             flex-direction: column;
             justify-content: space-between;
         }
+
+        hr {
+            border: 1px solid rgb(204, 204, 204);
+            width: 80%;
+            margin: auto;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
@@ -137,6 +151,8 @@
                 </p>
                 <button>Doe e ajude na causa dos gambás!</button>
             </section>
+
+            <hr>
 
             <section id="carrossel">
                 <div id="bt-left" onclick="carrossel(-1)">
@@ -171,27 +187,25 @@
                         </div>
                         <div class="curiosidade">
                             <h3>Possuem uma cauda preênsil, que funciona como um "quinto membro" para se agarrar</h3>
-                            <p>O gambá possui uma cauda preênsil forte, que atua como um "quinto membro" para se
-                                agarrar. Essa cauda é essencial para o equilíbrio e a locomoção do animal,
+                            <p>Essa cauda é essencial para o equilíbrio e a locomoção do animal,
                                 permitindo-lhe escalar árvores com agilidade e segurança.</p>
                         </div>
                         <div class="curiosidade">
                             <h3>São animais noturnos e usam seu olfato apurado para encontrar comida.</h3>
-                            <p>O gambá é um animal de hábitos noturnos. Ele utiliza seu olfato apurado como principal
+                            <p>Por ter hábitos noturnos, ele utiliza seu olfato apurado como principal
                                 ferramenta para encontrar uma grande variedade de alimentos na escuridão, incluindo
                                 frutas, insetos e pequenos vertebrados.</p>
                         </div>
                         <div class="curiosidade">
                             <h3>Ajudam a dispersar sementes, contribuindo para o crescimento de novas plantas</h3>
-                            <p>Ao se alimentarem de frutos, os gambás desempenham um papel fundamental na dispersão de
-                                sementes. Eles as transportam para novos locais, contribuindo significativamente para o
-                                crescimento de novas plantas e para a regeneração de ecossistemas.</p>
+                            <p>Ao se alimentarem de frutos, os gambás transportam as sementes para novos locais,
+                                contribuindo significativamente para o crescimento de novas plantas e para a regeneração
+                                de ecossistemas.</p>
                         </div>
                         <div class="curiosidade">
                             <h3>Sua temperatura corporal é baixa, tornando-os resistentes a doenças como a raiva</h3>
-                            <p>Sua temperatura é naturalmente baixa, variando entre 34 e 36 °C. Essa
-                                característica os torna muito resistentes a certas doenças pois a
-                                temperatura impede a replicação do vírus em seus corpos.</p>
+                            <p>Varia entre 34 e 36 °C. Essa característica os torna muito resistentes a certas doenças
+                                pois a temperatura impede a replicação do vírus em seus corpos.</p>
                         </div>
                     </div>
                 </div>
@@ -199,6 +213,8 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </div>
             </section>
+
+            <hr>
 
         </div>
         <div id="grupo02">
@@ -215,6 +231,8 @@
 
         </div>
     </div>
+
+    <hr>
 
     <script>
         const imgs = document.getElementById("carrossel-container");
