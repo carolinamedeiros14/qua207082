@@ -47,12 +47,6 @@
             margin: 40px auto;
         }
 
-        #lista {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         #carrossel {
             display: flex;
             justify-content: center;
@@ -60,6 +54,7 @@
 
         #container {
             width: 880px;
+            height: 300px;
             overflow: hidden;
         }
 
@@ -70,10 +65,15 @@
         }
 
         #carrossel-container div {
-            height: 130px;
+            height: 300px;
             min-width: 200px;
             background-color: grey;
             margin: 10px;
+            padding: 15px;
+        }
+
+        #carrossel-container h3 {
+            margin-bottom: 10px;
         }
 
         #bt-left,
@@ -101,7 +101,7 @@
         }
 
         body {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: auto;
         }
 
@@ -144,14 +144,55 @@
                 </div>
                 <div id="container">
                     <div id="carrossel-container">
-                        <div class="img">1</div>
-                        <div class="img">2</div>
-                        <div class="img">3</div>
-                        <div class="img">4</div>
-                        <div class="img">5</div>
-                        <div class="img">6</div>
-                        <div class="img">7</div>
-                        <div class="img">8</div>
+                        <div class="curiosidade">
+                            <h3>Têm uma incrível resistência ao veneno de cobras.</h3>
+                            <p>Sua imunidade se deve a uma proteína no sangue que neutraliza as toxinas, permitindo-lhes
+                                sobreviver a picadas de serpentes venenosas. Essa característica os torna um dos poucos
+                                mamíferos com tal capacidade de defesa.</p>
+                        </div>
+                        <div class="curiosidade">
+                            <h3>Ajudam a controlar pragas, comendo carrapatos, baratas e ratos</h3>
+                            <p>São aliados no controle de pragas, atuando como importantes predadores naturais.
+                                Eles se alimentam de carrapatos, baratas e ratos, contribuindo para a manutenção do
+                                equilíbrio ecológico em diversos ambientes.</p>
+                        </div>
+                        <div class="curiosidade">
+                            <h3>Sua famosa "tanatose" (fingir-se de morto) é uma reação involuntária ao medo</h3>
+                            <p>Não é um truque! Mas sim uma reação involuntária. Diante de um perigo extremo, o animal
+                                entra em um estado de choque catatônico, liberando até um odor fétido para afastar
+                                predadores.</p>
+                        </div>
+                        <div class="curiosidade">
+                            <h3>São marsupiais, assim como os cangurus, e as fêmeas carregam os filhotes em uma bolsa
+                            </h3>
+                            <p>Assim como os cangurus, as fêmeas possuem uma bolsa abdominal, chamada marsúpio, onde os
+                                filhotes completam seu desenvolvimento e permanecem seguros até estarem prontos para o
+                                mundo exterior.</p>
+                        </div>
+                        <div class="curiosidade">
+                            <h3>Possuem uma cauda preênsil, que funciona como um "quinto membro" para se agarrar</h3>
+                            <p>O gambá possui uma cauda preênsil forte, que atua como um "quinto membro" para se
+                                agarrar. Essa cauda é essencial para o equilíbrio e a locomoção do animal,
+                                permitindo-lhe escalar árvores com agilidade e segurança.</p>
+                        </div>
+                        <div class="curiosidade">
+                            <h3>São animais noturnos e usam seu olfato apurado para encontrar comida.</h3>
+                            <p>O gambá é um animal de hábitos noturnos. Ele utiliza seu olfato apurado como principal
+                                ferramenta para encontrar uma grande variedade de alimentos na escuridão, incluindo
+                                frutas, insetos e pequenos vertebrados.</p>
+                        </div>
+                        <div class="curiosidade">
+                            <h3>Ajudam a dispersar sementes, contribuindo para o crescimento de novas plantas</h3>
+                            <p>Ao se alimentarem de frutos, os gambás desempenham um papel fundamental na dispersão de
+                                sementes. Eles as transportam para novos locais, contribuindo significativamente para o
+                                crescimento de novas plantas e para a regeneração de ecossistemas.</p>
+                        </div>
+                        <div class="curiosidade">
+                            <h3>Sua temperatura corporal é baixa, tornando-os resistentes a doenças como a raiva</h3>
+                            <p>Sua temperatura é naturalmente baixa, variando entre 34 e 36 °C. Essa
+                                característica os torna muito resistentes a certas doenças pois a
+                                temperatura impede a replicação do vírus em seus corpos.</p>
+                        </div>
                     </div>
                 </div>
                 <div id="bt-right" onclick="carrossel(1)">
