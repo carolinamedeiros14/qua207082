@@ -4,28 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Marca</title>
+    <title>o Mundo dos Gambás</title>
     <style>
+        html {
+            background-color: #f8f7f5;
+            color: #333;
+            border-radius: 20px;
+            padding: 25px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             text-decoration: none;
             border: none;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #e9e7e2;
+            color: #333;
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
         }
 
         header {
             display: flex;
             justify-content: space-between;
-            border: 1px solid black;
             align-items: center;
-            padding: 5px;
+            padding: 10px 0 30px 0;
         }
 
-        nav a {
+        header h1 {
+            font-size: 170%;
+        }
+
+        header nav a {
             background-color: black;
             color: white;
             padding: 10px 15px;
             margin: 0px 2px;
+            border-radius: 8px;
+        }
+
+        .layout {
+            display: flex;
+            flex-wrap: wrap;
         }
 
         #principal {
@@ -105,12 +130,7 @@
         footer {
             background-color: black;
             color: white;
-            text-align: end;
-        }
-
-        body {
-            max-width: 1100px;
-            margin: auto;
+            text-align: center;
         }
 
         #conteiner {
@@ -119,132 +139,95 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
-        hr {
-            border: 1px solid rgb(204, 204, 204);
-            width: 80%;
-            margin: auto;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 
 <body>
+    <header>
+        <h1>O incrível mundo dos gambás</h1>
+        <nav>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </nav>
+    </header>
 
-    <div id="conteiner">
-        <div id="grupo01">
-            <header>
-                <h1>O incrível mundo dos gambás</h1>
-                <nav>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                </nav>
-            </header>
+    <section id="principal">
+        <div id="principal-conteudo">
+            <h2>Heróis inesperados da natureza</h2>
+            <p>Eles são vistos apenas como visitantes noturnos indesejados, mas os gambás são, na verdade, criaturas
+                fascinantes. Únicos marsupiais das Américas, desempenham papéis vitais no ecossistema e possuem
+                habilidades dignas de super-heróis.</p>
+            <button>Doe e ajude na causa!</button>
+        </div>
+        <div id="principal-imagem">
+            <img src="https://i.pinimg.com/736x/aa/6e/d4/aa6ed4a6a50b1b74ce73c1f88660c17e.jpg">
+        </div>
+    </section>
 
-            <section id="principal">
-                <h2>Heróis inesperados da natureza</h2>
-                <p>
-                    Eles são vistos apenas como visitantes noturnos indesejados, mas os gambás (ou saruês) são, na
-                    verdade, criaturas fascinantes. São os únicos marsupiais encontrados nas Américas, desempenhando
-                    papéis vitais no ecossistema e possuindo habilidades dignas de super-herois.
-                </p>
-                <button>Doe e ajude na causa dos gambás!</button>
-            </section>
 
-            <hr>
+    <div id="layout-colunas">
+        <div id="coluna-esquerda">
+            <section id="card-especies" class="card">
+                <h3>Principais espécies</h3>
+                <div id="especies-carrossel" class="carousel">
+                    <div class="carousel-item">
+                        <img src="https://static.inaturalist.org/photos/68427/large.JPG">
+                        <h4>Gambá-comum</h4>
+                        <p><i>Didelphis marsupialis.</i> Com orelhas pretas, é altamente adaptável, vivendo de florestas
+                            a áreas urbanas.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Didelphis_albiventris%2C_Bahia%2C_Brazil.jpg/1200px-Didelphis_albiventris%2C_Bahia%2C_Brazil.jpg">
+                        <h4>Gambá-de-orelha-branca</h4>
+                        <p><i>Didelphis albiventris.</i> Sua principal característica são os pelos brancos que cobrem
+                            suas orelhas.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://portalamazonia.com/wp-content/uploads/2022/09/b2ap3_large_45179604_1089539464545724_3019350206517870592_n.jpg">
+                        <h4>Gambá-amazônico</h4>
+                        <p><i>Didelphis imperfecta. </i> Como o nome sugere, é uma espécie com foco de distribuição na
+                            região da Amazônia e no norte do Brasil.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.upf.br/Media/image_197365.png">
+                        <h4>Gambá-comum</h4>
+                        <p><i>Didelphis marsupialis.</i> Com orelhas pretas, é altamente adaptável, vivendo de florestas
+                            a áreas urbanas.</p>
+                    </div>
 
-            <section id="carrossel">
-                <div id="bt-left" onclick="carrossel(-1)">
-                    <i class="fa-solid fa-angle-left"></i>
-                </div>
-                <div id="container">
-                    <div id="carrossel-container">
-                        <div class="curiosidade">
-                            <h3>Têm uma incrível resistência ao veneno de cobras.</h3>
-                            <p>Sua imunidade se deve a uma proteína no sangue que neutraliza as toxinas, permitindo-lhes
-                                sobreviver a picadas de serpentes venenosas. Essa característica os torna um dos poucos
-                                mamíferos com tal capacidade de defesa.</p>
-                        </div>
-                        <div class="curiosidade">
-                            <h3>Ajudam a controlar pragas, comendo carrapatos, baratas e ratos</h3>
-                            <p>São aliados no controle de pragas, atuando como importantes predadores naturais.
-                                Eles se alimentam de carrapatos, baratas e ratos, contribuindo para a manutenção do
-                                equilíbrio ecológico em diversos ambientes.</p>
-                        </div>
-                        <div class="curiosidade">
-                            <h3>Sua famosa "tanatose" (fingir-se de morto) é uma reação involuntária ao medo</h3>
-                            <p>Não é um truque! Mas sim uma reação involuntária. Diante de um perigo extremo, o animal
-                                entra em um estado de choque catatônico, liberando até um odor fétido para afastar
-                                predadores.</p>
-                        </div>
-                        <div class="curiosidade">
-                            <h3>São marsupiais, assim como os cangurus, e as fêmeas carregam os filhotes em uma bolsa
-                            </h3>
-                            <p>Assim como os cangurus, as fêmeas possuem uma bolsa abdominal, chamada marsúpio, onde os
-                                filhotes completam seu desenvolvimento e permanecem seguros até estarem prontos para o
-                                mundo exterior.</p>
-                        </div>
-                        <div class="curiosidade">
-                            <h3>Possuem uma cauda preênsil, que funciona como um "quinto membro" para se agarrar</h3>
-                            <p>Essa cauda é essencial para o equilíbrio e a locomoção do animal,
-                                permitindo-lhe escalar árvores com agilidade e segurança.</p>
-                        </div>
-                        <div class="curiosidade">
-                            <h3>São animais noturnos e usam seu olfato apurado para encontrar comida.</h3>
-                            <p>Por ter hábitos noturnos, ele utiliza seu olfato apurado como principal
-                                ferramenta para encontrar uma grande variedade de alimentos na escuridão, incluindo
-                                frutas, insetos e pequenos vertebrados.</p>
-                        </div>
-                        <div class="curiosidade">
-                            <h3>Ajudam a dispersar sementes, contribuindo para o crescimento de novas plantas</h3>
-                            <p>Ao se alimentarem de frutos, os gambás transportam as sementes para novos locais,
-                                contribuindo significativamente para o crescimento de novas plantas e para a regeneração
-                                de ecossistemas.</p>
-                        </div>
-                        <div class="curiosidade">
-                            <h3>Sua temperatura corporal é baixa, tornando-os resistentes a doenças como a raiva</h3>
-                            <p>Varia entre 34 e 36 °C. Essa característica os torna muito resistentes a certas doenças
-                                pois a temperatura impede a replicação do vírus em seus corpos.</p>
-                        </div>
+
+
+
+
+                    <div id="grupo02">
+
+                        <section id="depoimentos">
+                            <h2>O que nossos clientes dizem</h2>
+                            <p>"Mudou completamente minha forma de trabalhar. Recomendo!"</p>
+                            <p>"Excelente atendimento e resultados incríveis!"</p>
+                        </section>
+
+                        <footer>
+                            &copy; 2025 - Todos os direitos reservados.
+                        </footer>
+
                     </div>
                 </div>
-                <div id="bt-right" onclick="carrossel(1)">
-                    <i class="fa-solid fa-angle-right"></i>
-                </div>
-            </section>
 
-            <hr>
 
-        </div>
-        <div id="grupo02">
-
-            <section id="depoimentos">
-                <h2>O que nossos clientes dizem</h2>
-                <p>"Mudou completamente minha forma de trabalhar. Recomendo!"</p>
-                <p>"Excelente atendimento e resultados incríveis!"</p>
-            </section>
-
-            <footer>
-                &copy; 2025 MinhaMarca - Todos os direitos reservados.
-            </footer>
-
-        </div>
-    </div>
-
-    <hr>
-
-    <script>
-        const imgs = document.getElementById("carrossel-container");
-        const img = document.querySelectorAll("#carrossel-container div");
-        let idx = 0;
-        function carrossel(i) {
-            idx += i;
-            if (idx < 0) idx = 0;
-            if (idx >= img.length - 4) idx = img.length - 4;
-            imgs.style.transform = `translateX(${-idx * 220}px)`;
-        }
-    </script>
+                <script>
+                    const imgs = document.getElementById("carrossel-container");
+                    const img = document.querySelectorAll("#carrossel-container div");
+                    let idx = 0;
+                    function carrossel(i) {
+                        idx += i;
+                        if (idx < 0) idx = 0;
+                        if (idx >= img.length - 4) idx = img.length - 4;
+                        imgs.style.transform = `translateX(${-idx * 220}px)`;
+                    }
+                </script>
 
 </body>
 
