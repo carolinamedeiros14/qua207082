@@ -56,57 +56,45 @@
         #principal {
             background-color: grey;
             text-align: left;
+            padding: 30px;
+            background-color: #f8f7f5;
         }
 
-        #principal h2 {
+        #principal-conteudo {
+            width: 55%;
+            padding-right: 30px;
+        }
+
+        #principal-conteudo h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
             padding-top: 45px;
             padding-left: 10px
         }
 
-        #principal p {
-            margin-left: 10px;
-            padding-top: 20px;
-            max-width: 400px;
+        #principal-conteudo button {
+            padding: 12px 18px;
+            margin-top: 30px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+            font-size: 1em;
         }
 
-        #principal button {
-            padding: 10px 15px;
-            margin: 40px auto;
-            margin-left: 10px;
+        #principal-imagem {
+            width: 45%;
+            height: 350px;
         }
 
-        .curiosidade h3,
-        .curiosidade p {
-            padding: 7px;
-        }
-
-        #carrossel {
-            display: flex;
-            justify-content: center;
-            padding: 20px 0px;
-            align-items: center;
-        }
-
-        #container {
-            width: 880px;
-            height: 300px;
-            overflow: hidden;
-        }
-
-        #carrossel-container {
+        #principal-imagem img {
             width: 100%;
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
-        #carrossel-container div.curiosidade {
-            height: 300px;
-            min-width: 200px;
-            background-color: grey;
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
-        }
+
 
         #bt-left,
         #bt-right {
@@ -131,13 +119,6 @@
             background-color: black;
             color: white;
             text-align: center;
-        }
-
-        #conteiner {
-            display: flex;
-            height: 100vh;
-            flex-direction: column;
-            justify-content: space-between;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
@@ -198,35 +179,34 @@
                         <p><i>Didelphis aurita.</i> Com orelhas pretas, é altamente adaptável, vivendo de florestas
                             a áreas urbanas.</p>
                     </div>
-
-
-                    <div id="grupo02">
-
-                        <section id="depoimentos">
-                            <h2>O que nossos clientes dizem</h2>
-                            <p>"Mudou completamente minha forma de trabalhar. Recomendo!"</p>
-                            <p>"Excelente atendimento e resultados incríveis!"</p>
-                        </section>
-
-                        <footer>
-                            &copy; 2025 - Todos os direitos reservados.
-                        </footer>
-
-                    </div>
                 </div>
+            </section>
+        </div>
+
+        <div id="coluna-direita">
+            <section id="card-curiosidades" class="card">
+                
+            </section>
+        </div>
+
+    </div>
+     
+    <footer>
+        &copy; 2025 - Todos os direitos reservados.
+    </footer>
 
 
-                <script>
-                    const imgs = document.getElementById("carrossel-container");
-                    const img = document.querySelectorAll("#carrossel-container div");
-                    let idx = 0;
-                    function carrossel(i) {
-                        idx += i;
-                        if (idx < 0) idx = 0;
-                        if (idx >= img.length - 4) idx = img.length - 4;
-                        imgs.style.transform = `translateX(${-idx * 220}px)`;
-                    }
-                </script>
+    <script>
+        const imgs = document.getElementById("carrossel-container");
+        const img = document.querySelectorAll("#carrossel-container div");
+        let idx = 0;
+        function carrossel(i) {
+            idx += i;
+            if (idx < 0) idx = 0;
+            if (idx >= img.length - 4) idx = img.length - 4;
+            imgs.style.transform = `translateX(${-idx * 220}px)`;
+        }
+    </script>
 
 </body>
 
