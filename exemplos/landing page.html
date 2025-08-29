@@ -48,65 +48,55 @@
             border-radius: 8px;
         }
 
-        .layout {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        #principal {
+               #principal {
             background-color: grey;
             text-align: left;
+            padding: 30px;
+            background-color: #f8f7f5;
         }
 
-        #principal h2 {
+        #principal-conteudo {
+            width: 55%;
+            padding-right: 30px;
+        }
+
+        #principal-conteudo h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
             padding-top: 45px;
             padding-left: 10px
         }
 
-        #principal p {
-            margin-left: 10px;
-            padding-top: 20px;
-            max-width: 400px;
+        #principal-conteudo button {
+            padding: 12px 18px;
+            margin-top: 30px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+            font-size: 1em;
         }
 
-        #principal button {
-            padding: 10px 15px;
-            margin: 40px auto;
-            margin-left: 10px;
+        #principal-imagem {
+            width: 45%;
+            height: 350px;
         }
 
-        .curiosidade h3,
-        .curiosidade p {
-            padding: 7px;
-        }
-
-        #carrossel {
-            display: flex;
-            justify-content: center;
-            padding: 20px 0px;
-            align-items: center;
-        }
-
-        #container {
-            width: 880px;
-            height: 300px;
-            overflow: hidden;
-        }
-
-        #carrossel-container {
+        #principal-imagem img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+         .layout {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            flex-wrap: wrap;
         }
 
-        #carrossel-container div.curiosidade {
-            height: 300px;
-            min-width: 200px;
-            background-color: grey;
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
-        }
+        #layout-colunas {
+            display: flex;
+            padding: 20px 10px;
+        }   
 
         #bt-left,
         #bt-right {
@@ -117,27 +107,10 @@
             padding: 10px;
         }
 
-        #depoimentos {
-            text-align: center;
-            background-color: grey;
-            padding: 10px;
-        }
-
-        #depoimentos * {
-            padding: 10px;
-        }
-
         footer {
             background-color: black;
             color: white;
             text-align: center;
-        }
-
-        #conteiner {
-            display: flex;
-            height: 100vh;
-            flex-direction: column;
-            justify-content: space-between;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
@@ -170,6 +143,9 @@
     <div id="layout-colunas">
         <div id="coluna-esquerda">
             <section id="card-especies" class="card">
+                <div id="bt-left" onclick="carrossel(-1)">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
                 <h3>Principais espécies</h3>
                 <div id="especies-carrossel" class="carousel">
                     <div class="carousel-item">
@@ -198,35 +174,70 @@
                         <p><i>Didelphis aurita.</i> Com orelhas pretas, é altamente adaptável, vivendo de florestas
                             a áreas urbanas.</p>
                     </div>
+                </div>
+                <div id="bt-right" onclick="carrossel(1)">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </section>
+        </div>
 
-
-                    <div id="grupo02">
-
-                        <section id="depoimentos">
-                            <h2>O que nossos clientes dizem</h2>
-                            <p>"Mudou completamente minha forma de trabalhar. Recomendo!"</p>
-                            <p>"Excelente atendimento e resultados incríveis!"</p>
-                        </section>
-
-                        <footer>
-                            &copy; 2025 - Todos os direitos reservados.
-                        </footer>
-
+        <div id="coluna-direita">
+            <section id="card-curiosidades" class="card">
+                <h3>Curiosidades!</h3>
+                <div id="curiosidades-carousel" class="carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-item">
+                            <h4>Resistência a Veneno</h4>
+                            <p>Possuem uma proteína no sangue que neutraliza veneno de cobras, tornando-os imunes a
+                                picadas.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h4>Controle de Pragas</h4>
+                            <p>São predadores naturais de carrapatos, baratas e pequenos roedores, ajudando no
+                                equilíbrio do ambiente.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h4>Fingir de Morto (Tanatose)</h4>
+                            <p>É uma reação involuntária ao medo extremo, onde entram em choque catatônico para enganar
+                                predadores.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h4>Dispersores de Sementes</h4>
+                            <p>Ao comerem frutas, espalham sementes e ajudam na regeneração de florestas e matas.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h4>Imunidade à Raiva</h4>
+                            <p>Sua baixa temperatura corporal (34-36°C) impede que o vírus da raiva se replique,
+                                tornando a doença rara neles.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <section id="card-final" class="card">
+                <h3>Um Papel Vital</h3>
+                <p>Proteger nossos marsupiais é um pequeno gesto com um grande impacto na biodiversidade. Conhecer para
+                    preservar é o primeiro passo.</p>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 - Todos os direitos reservados.
+    </footer>
 
 
-                <script>
-                    const imgs = document.getElementById("carrossel-container");
-                    const img = document.querySelectorAll("#carrossel-container div");
-                    let idx = 0;
-                    function carrossel(i) {
-                        idx += i;
-                        if (idx < 0) idx = 0;
-                        if (idx >= img.length - 4) idx = img.length - 4;
-                        imgs.style.transform = `translateX(${-idx * 220}px)`;
-                    }
-                </script>
+    <script>
+        const imgs = document.getElementById("carrossel-container");
+        const img = document.querySelectorAll("#carrossel-container div");
+        let idx = 0;
+        function carrossel(i) {
+            idx += i;
+            if (idx < 0) idx = 0;
+            if (idx >= img.length - 4) idx = img.length - 4;
+            imgs.style.transform = `translateX(${-idx * 220}px)`;
+        }
+    </script>
 
 </body>
 
