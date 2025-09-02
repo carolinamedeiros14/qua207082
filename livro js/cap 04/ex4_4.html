@@ -1,19 +1,22 @@
-<script>
-    const bairro = prompt("Bairro de Entrega:")
-    let taxaEntrega
-    switch (bairro) {
-        case "Taguatinga":
-            taxaEntrega = 5.00
-            break;
-        case "Ceilandia":
-            taxaEntrega = 7.00
-            break;
-        case "Guará":
-            taxaEntrega = 10.00
-            break;
-        default:
-            taxaEntrega = 8.00
-            break;
-    }
-    alert(`Taxa R$: ${taxaEntrega.toFixed(2)}`)
-</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 4.4</title>
+    <link rel="stylesheet" href="css/estilo-basico.css">
+</head>
+<body>
+    <img src="img/ex4_4.jpg" alt="Globo Terrestre">
+    <h1>Programa Fuso Horário</h1>
+    <form>
+        <p>
+            Hora de Brasil(h.m):
+            <input type="number" step="0.01" win="0" max="23.59" id="inHoraBrasil" required>
+        </p>
+        <input type="submit" value="Exibe Hora na França">
+    </form>
+    <h3></h3>
+    <script src="js/ex4_4.js"></script>
+</body>
+</html>
