@@ -5,7 +5,7 @@ const resp3 = document.querySelector("#outResp3")
 
 frm.addEventListener("submit", (e) => { 
     e.preventDefault()
-    limparResp
+    limparResp()
 
     const saque = Number(frm.inSaque.value)
     if(saque % 10 != 0) {
