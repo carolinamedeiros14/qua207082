@@ -1,12 +1,14 @@
 <script>
     const situacao = (nota, media) =>{
-        if(nota > media){
-            alert("Aprovado")
+        if(nota >= media){
+            return "Aprovado"
         } else {
-            alert("Reprovado")
+            return "Reprovado"
         }
     }
+    
     const nota = Number(prompt("Qual a nota: "))
     situacao(nota)
-    situacao(nota, 4.75)
+    alert(`Situação do aluno: ${situacao(nota, 4,75)}`)
+
 </script>
