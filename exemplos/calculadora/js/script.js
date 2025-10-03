@@ -16,11 +16,42 @@ function apagar() {
 
 //função para calcular o resultado
 function calcular() {
-    const visor = document.querySelector("visor")
-    try{
+    const visor = document.querySelector("#visor")
+    try {
         //usar a function eval() para calcular o resultado
         visor.value = eval(visor.value)
-    } catch (error){
+    } catch (error) {
         visor.value = "erro!"
     }
+}
+
+function porcentagem() {
+    calcular()
+    const visor = document.querySelector("#visor")
+    visor.value = Number(visor.value) / 100
+}
+
+const botoes = document.querySelectorAll("button")
+
+
+for (const botao of botoes) {
+    botao.addEventListener("click", () => {
+        switch (botao.innerText) {
+            case "C":
+                limpar()
+                break;
+            case "←":
+                apagar()
+                break;
+            case "%":
+                porcentagem()
+                break;
+            case "=":
+                calcular()
+                break;
+            default:
+                adicionar(botao.innerText)
+                break;
+        }
+    })
 }
