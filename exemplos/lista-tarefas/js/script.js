@@ -1,7 +1,8 @@
 const frm = document.querySelector("form")
 const tbody = document.querySelector("tbody")
 const lsItem = []
-
+let filtro = localStorage.getItem("filtro")
+filtro = filtro == null ? "" : filtro
 frm.addEventListener("submit", (e) => {
     e.preventDefault()
     const item = frm.inItem.value
@@ -56,4 +57,20 @@ function limpar() {
 if (localStorage.getItem("lsItem") != null) {
     lsItem = JSON.parse(localStorage.getItem("lsItem"))
     atualizarTabela()
+}
+
+const lsFiltro = frm.querySelectorAll('input[type=checkbox]')
+for (const bt of lsFiltro) {
+    bt.addEventListener("click", filtrar)
+    if (filtro.includes(bt.value)) {
+        bt.checked = true
+    }
+}
+
+function filtrar() {
+    let filtro = ""
+    for (const bt of lsFiltro) {
+        filtro = bt.checked ? bt.value = "," : ""
+    }
+    alert(filtro)
 }
