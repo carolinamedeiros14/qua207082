@@ -78,9 +78,41 @@ p {
     padding: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    transition: box-shadow 0.5s;
+    position: relative;
 }
 
-.produto img{
+.produto > div > img{
+    display: none;
+}
+
+.marcado > div > img{
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 128px;
+    height: 128px;
+    filter: invert(1);
+    display: block;
+}
+
+.produto:hover{
+    box-shadow: 0px 0px 7px 0px #3b0a0a;
+}
+
+.marcado{
+    background-color: #3b0a0a;
+}
+
+.marcado p{
+    color: white;
+}
+
+.marcado > img {
+    opacity: 0.7;
+}
+
+.produto > img{
     width: 210px;
     height: 210px;
     margin-bottom: 10px;
