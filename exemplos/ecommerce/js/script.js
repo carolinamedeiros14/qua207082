@@ -10,6 +10,7 @@ for (const p of lsProduto) {
     clone.querySelector(".valor").innerText = `R$ ${p.valor.toFixed(2).toString().replace(".", ",")}`
     produtos.appendChild(clone)
 }
+
 document.querySelectorAll(".produto").forEach((p, i) => {
     p.addEventListener("click", () => {
         p.classList.toggle("marcado")
@@ -23,7 +24,7 @@ document.querySelectorAll(".produto").forEach((p, i) => {
 })
 
 function atualizarQt() {
-    const qt = lsProduto.filter(p => p.qt == 1)
+    const qt = lsProduto.filter(p => p.qt >= 1)
     document.querySelector("#qt").innerText = qt.length > 0 ? qt.length : ""
 }
 
@@ -32,7 +33,7 @@ document.querySelector("#btVela").addEventListener("click", carrinho)
 function carrinho() {
     const qt = document.querySelector("#qt").innerText
     if (qt == "") {
-        alert("Necessário selecionar 1 item")
+        alert("Necessário selecionar 1 item.")
         return
     }
     produtos.classList.toggle("ocultar")
@@ -40,19 +41,21 @@ function carrinho() {
     atualizarTb()
 }
 
+let pedido
 function atualizarTb() {
+    pedido = ""
     let total = 0
     const tbody = document.querySelector("tbody")
     tbody.innerHTML = ""
     for (let i = 0; i < lsProduto.length; i++) {
         const p = lsProduto[i]
         if (p.qt > 0) {
-            tbody.innerHTML += ` <tr>
+            tbody.innerHTML += `<tr>
             <td>${p.nome}</td>
             <td>${p.qt}</td>
             <td>${p.valor.toFixed(2)}</td>
             <td>${(p.qt * p.valor).toFixed(2)}</td>
-            <td onclick="add(${i},1)">+</td>
+            <td onclick="add(${i}, 1)">+</td>
             <td onclick="add(${i},-1)">-</td>
             </tr>
             `
@@ -62,7 +65,7 @@ function atualizarTb() {
     }
     tbody.innerHTML += `
     <tr>
-        <td colspan="3">Valor final</td>
+        <td colspan="3">Valor Final</td>
         <td colspan="3">${total.toFixed(2)}</td>
     </tr>
     `
@@ -83,11 +86,15 @@ function add(i, valor) {
 }
 
 const frm = document.querySelector("form")
-frm.addEventListener("submit", (e) => {
+frm.addEventListener("submit", (e) =>{
     e.preventDefault()
     const nome = frm.inNome.value
-    let msg = "Desejo fazer o seguinte pedido"
+    let msg = "Desejo fazer o seguinte pedido!\n"
     msg += pedido
     msg += `Att: ${nome}`
-
+    if(confirm("Deseja enviar essa mensagem?\n"+msg)){
+        msg = encodeURI(msg)
+        const link = `https://wa.me/5516996364132?text=Ol%C3%A1!%20Vim%20pelo%20site%20Atabaque%20Jair%20e%20gostaria%20de%20ajuda.=${msg}`
+        window.open(link, '_blank')
+    }
 })
