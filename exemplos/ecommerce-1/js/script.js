@@ -94,7 +94,7 @@ frm.addEventListener("submit", (e) =>{
     msg += `Att: ${nome}`
     if(confirm("Deseja enviar essa mensagem?\n"+msg)){
         msg = encodeURI(msg)
-        const link = `https://wa.me/5516996364132?text=Ol%C3%A1!%20Vim%20pelo%20site%20Atabaque%20Jair%20e%20gostaria%20de%20ajuda.=${msg}`
+        const link = `https://api.whatsapp.com/send?phone=5561985607460&text=${msg}`
         window.open(link, '_blank')
     }
 })

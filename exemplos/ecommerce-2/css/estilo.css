@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #EAE0D5;
+    color: #5D4037;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 15px rgb(0, 0, 0);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #DCD3C9;
+}
+
+#topo .esquerdo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    color: #5D4037;
+    letter-spacing: 2px;
+}
+
+#topo .esquerdo p {
+    font-size: 0.9em;
+    color: #8C7B71;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+#topo .direito #btProd {
+    display: flex;
+    align-items: center;
+    background-color: #4A6A4F;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: center;
+}
+
+#topo .direito #btProd:hover {
+    background-color: #3b523f;
+}
+
+#topo .direito #btProd img {
+    width: 24px;
+    filter: invert(100%);
+}
+
+#topo .direito #btProd #qt {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-left: 8px;
+}
+
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+.produto {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: left;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #000000;
+}
+
+.produto:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transform: translateY(-5px);
+}
+
+.produto.marcado {
+    border-color: #4A6A4F;
+    box-shadow: 0 0 0 3px #4A6A4F;
+}
+
+.produto img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: #4A6A4F solid 2px;
+}
+
+.produto .nome,
+.produto .descricao,
+.produto .valor {
+    width: 100%;
+    text-align: center;
+}
+
+.produto .nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #5D4037;
+}
+
+.produto .descricao {
+    font-size: 0.9em;
+    color: #8C7B71;
+    min-height: 40px;
+    margin-bottom: 15px;
+}
+
+.produto .valor {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #4A6A4F;
+    margin-top: auto; 
+}
+
+.produto > div img {
+    display: none;
+}
+
+.carrinho {
+    padding: 40px;
+    background-color: #fcfcfc;
+    border-top: 1px solid #DCD3C9;
+}
+
+.carrinho table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carrinho th, .carrinho td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.carrinho thead th {
+    background-color: #4A6A4F;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.carrinho tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.carrinho tbody tr.total-row td {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border-top: 2px solid #DCD3C9;
+    font-size: 1.1em;
+}
+
+.carrinho td.acao {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4A6A4F;
+    font-size: 1.2em;
+    width: 50px;
+    transition: background-color 0.2s ease;
+}
+
+.carrinho td.acao:hover {
+    background-color: #f0f0f0;
+}
+
+.carrinho form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #DCD3C9;
+    border-radius: 8px;
+}
+
+.carrinho label {
+    font-weight: bold;
+    color: #5D4037;
+    font-size: 0.95em;
+}
+
+.carrinho input[type="text"] {
+    padding: 12px;
+    border: 1px solid #DCD3C9;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+.carrinho input[type="text"]:focus {
+    border-color: #4A6A4F;
+    outline: none;
+}
+
+.carrinho input[type="button"],
+.carrinho input[type="submit"] {
+    background-color: #4A6A4F;
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.carrinho input[type="button"]:hover,
+.carrinho input[type="submit"]:hover {
+    background-color: #3b523f;
+}
+
+.ocultar {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .produtos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    #topo {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #topo .esquerdo {
+        margin-bottom: 15px;
+    }
+
+    #topo .esquerdo h1 {
+        font-size: 2.2em;
+    }
+
+    .produtos {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .produto img {
+        height: 200px;
+    }
+
+    .carrinho {
+        padding: 20px;
+    }
+
+    .carrinho th, .carrinho td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .carrinho td.acao {
+        width: 40px;
+        font-size: 1em;
+    }
+    
+    .carrinho form {
+        padding: 15px;
+    }
+}
